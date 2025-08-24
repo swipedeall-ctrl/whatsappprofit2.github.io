@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Big Bull Trading - Investment Plans</title>
+  <style>
+    body{margin:0;font-family:Poppins,sans-serif;background:#0f172a;color:#fff;text-align:center;}
+    header{padding:60px 20px;}
+    header h1{font-size:3rem;color:#38bdf8;margin-bottom:10px;}
+    header p{font-size:1.2rem;color:#94a3b8;margin-bottom:20px;}
+    .hero-btn{padding:15px 30px;background:linear-gradient(135deg,#06b6d4,#3b82f6);color:#fff;border:none;border-radius:12px;font-weight:bold;cursor:pointer;transition:.3s;}
+    .hero-btn:hover{opacity:.9}
+    #countdown{font-size:1.2rem;color:#facc15;margin-top:15px;}
+
+    /* Plans */
+    .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1100px;margin:40px auto;padding:0 20px;}
+    .plan{background:rgba(255,255,255,0.08);padding:25px;border-radius:16px;transition:.3s}
+    .plan:hover{transform:translateY(-5px);box-shadow:0 0 20px rgba(56,189,248,.3)}
+    .price{font-size:1.8rem;color:#38bdf8;margin:15px 0;}
+
+    /* Sections */
+    section{padding:60px 20px;max-width:1000px;margin:auto;}
+    h2{color:#38bdf8;margin-bottom:20px;}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .testimonial{background:rgba(255,255,255,0.08);padding:20px;border-radius:16px;}
+
+    /* FAQ */
+    .faq{max-width:800px;margin:auto;text-align:left;}
+    .faq-item{margin-bottom:15px;}
+    .faq-item h4{color:#facc15;margin-bottom:5px;}
+
+    /* Contact */
+    .contact p{margin:8px 0;}
+
+    /* Footer */
+    footer{padding:20px;background:#1e293b;margin-top:40px;color:#94a3b8;font-size:.9rem;}
+
+    /* Sticky CTA */
+    .sticky-cta{position:fixed;bottom:20px;right:20px;z-index:1000;}
+
+    /* Wheel Section */
+    .wheel-section{padding:60px 20px;background:#1e293b;}
+    .wheel-container{position:relative;margin:20px auto;width:300px;height:300px;}
+    canvas{width:100%;height:100%;border-radius:50%;border:8px solid #38bdf8;}
+    .pointer{position:absolute;top:-25px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-bottom:40px solid #facc15;}
+    #discountMsg{margin-top:15px;font-size:1.1rem;color:#facc15;font-weight:bold;}
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header>
+    <a href="https://chat.whatsapp.com/Id3O6mgHbKe2Pr3jJI6fi6?mode=ems_copy_c" target="_blank">
+      <button class="hero-btn" style="background:linear-gradient(135deg,#10b981,#3b82f6);margin-bottom:15px;">
+        Join Our WhatsApp Group
+      </button>
+    </a>
+    <h1>Big Bull Trading</h1>
+    <p>💹 Invest Smart, Earn Bigger – Trusted by 10,000+ Investors</p>
+    <a href="https://wa.me/919942203323?text=Hello%20Big%20Bull%20Trading%2C%20I%20want%20to%20start%20investing.%20Please%20guide%20me." target="_blank">
+      <button class="hero-btn">Start Investing</button>
+    </a>
+    <div id="countdown">⏳ Offer ends in 10:00</div>
+  </header>
+
+  <!-- Plans -->
+  <section class="plans">
+    <div class="plan"><h3>Starter Plan</h3><div class="price" data-price="149">₹149</div><p>Return: ₹1499 in 30–45 mins</p>
+      <a href="https://wa.me/919942203323?text=I%20want%20to%20invest%20in%20Starter%20Plan%20(₹149)" target="_blank"><button class="hero-btn">Invest</button></a>
+    </div>
+    <div class="plan"><h3>Silver Plan</h3><div class="price" data-price="499">₹499</div><p>Return: ₹4999 in 30–45 mins</p>
+      <a href="https://wa.me/919942203323?text=I%20want%20to%20invest%20in%20Silver%20Plan%20(₹499)" target="_blank"><button class="hero-btn">Invest</button></a>
+    </div>
+    <div class="plan"><h3>Gold Plan</h3><div class="price" data-price="999">₹999</div><p>Return: ₹9999 in 30–45 mins</p>
+      <a href="https://wa.me/919942203323?text=I%20want%20to%20invest%20in%20Gold%20Plan%20(₹999)" target="_blank"><button class="hero-btn">Invest</button></a>
+    </div>
+    <div class="plan"><h3>Platinum Plan</h3><div class="price" data-price="1999">₹1999</div><p>Return: ₹19,999 in 30–45 mins</p>
+      <a href="https://wa.me/919942203323?text=I%20want%20to%20invest%20in%20Platinum%20Plan%20(₹1999)" target="_blank"><button class="hero-btn">Invest</button></a>
+    </div>
+    <div class="plan"><h3>Diamond Plan</h3><div class="price" data-price="4999">₹4999</div><p>Return: ₹49,999 in 30–45 mins</p>
+      <a href="https://wa.me/919942203323?text=I%20want%20to%20invest%20in%20Diamond%20Plan%20(₹4999)" target="_blank"><button class="hero-btn">Invest</button></a>
+    </div>
+    <div class="plan"><h3>Elite Plan</h3><div class="price" data-price="9999">₹9999</div><p>Return: ₹99,999 in 30–45 mins</p>
+      <a href="https://wa.me/919942203323?text=I%20want%20to%20invest%20in%20Elite%20Plan%20(₹9999)" target="_blank"><button class="hero-btn">Invest</button></a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section>
+    <h2>Why Choose Big Bull Trading?</h2>
+    <p>✔️ Instant Payouts &nbsp; ✔️ Secure Platform &nbsp; ✔️ High ROI &nbsp; ✔️ 24/7 Support</p>
+  </section>
+
+  <!-- How It Works -->
+  <section>
+    <h2>How It Works?</h2>
+    <p>1️⃣ Choose your plan<br>2️⃣ Invest amount<br>3️⃣ Wait 30–45 minutes<br>4️⃣ Get your profit instantly</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <h2>What Our Investors Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">“I invested ₹499 and got ₹4999 in 35 minutes. Amazing platform!”</div>
+      <div class="testimonial">“Secure, fast and real returns. Highly recommended!”</div>
+      <div class="testimonial">“Best investment platform, I loved the experience.”</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-item"><h4>⏳ Return कब मिलेगा?</h4><p>30–45 मिनट में payout auto मिलेगा।</p></div>
+      <div class="faq-item"><h4>💰 Minimum कितनी राशि invest कर सकता हूँ?</h4><p>Starter plan केवल ₹149 से शुरू होता है।</p></div>
+      <div class="faq-item"><h4>🔒 Safe है?</h4><p>हमारा system पूरी तरह secure और automated है।</p></div>
+      <div class="faq-item"><h4>⚡ Withdraw कैसे होगा?</h4><p>Payout आपके registered wallet में auto आएगा।p</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>📧 Email: support@bigbulltrading.com</p>
+    <p>💬 WhatsApp: +91-9942203323</p>
+    <p>📱 Telegram: @BigBullTrading</p>
+  </section>
+
+  <!-- Spin Wheel -->
+  <section class="wheel-section">
+    <h2>🎡 Spin & Win Discount</h2>
+    <p>एक बार chance मिलेगा – upto 15% Discount on Plans</p>
+    <div class="wheel-container">
+      <div class="pointer"></div>
+      <canvas id="wheel" width="300" height="300"></canvas>
+    </div>
+    <button class="hero-btn" onclick="spinWheel()" id="spinBtn">Spin Now</button>
+    <p id="discountMsg"></p>
+  </section>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta">
+    <a href="https://wa.me/919942203323?text=Hello%20Big%20Bull%20Trading%2C%20I%20want%20to%20invest%20now." target="_blank">
+      <button class="hero-btn">Invest Now</button>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Big Bull Trading | All Rights Reserved | <a href="#">Terms</a> | <a href="#">Privacy</a>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    let time=600;
+    const countdownEl=document.getElementById("countdown");
+    setInterval(()=>{let m=Math.floor(time/60),s=time%60;
+      countdownEl.textContent=`⏳ Offer ends in ${m}:${s<10?"0":""}${s}`;
+      if(time>0)time--;
+    },1000);
+
+    // Spin Wheel
+    const canvas=document.getElementById("wheel");
+    const ctx=canvas.getContext("2d");
+    const slices=["10%","11%","12%","13%","14%","15%","50%","100%"];
+    const colors=["#ef4444","#f59e0b","#10b981","#3b82f6","#8b5cf6","#ec4899","#14b8a6","#f97316"];
+    const sliceDeg=360/slices.length;
+    let currentAngle=0,spinning=false;
+
+    function drawWheel(){
+      for(let i=0;i<slices.length;i++){
+        ctx.beginPath();
+        ctx.moveTo(150,150);
+        ctx.arc(150,150,150,(sliceDeg*i+currentAngle)*Math.PI/180,(sliceDeg*(i+1)+currentAngle)*Math.PI/180);
+        ctx.fillStyle=colors[i];
+        ctx.fill();
+        ctx.save();
+        ctx.translate(150,150);
+        ctx.rotate((sliceDeg*(i+0.5)+currentAngle)*Math.PI/180);
+        ctx.textAlign="right";
+        ctx.fillStyle="#fff";
+        ctx.font="bold 14px Poppins";
+        ctx.fillText(slices[i],130,-5);
+        ctx.restore();
+      }
+    }
+    drawWheel();
+
+    function spinWheel(){
+      if(localStorage.getItem("hasSpun")){alert("You already spun the wheel!");return;}
+      if(spinning)return;
+      spinning=true;
+      let randomAngle=Math.floor(Math.random()*360+360*5);
+      let step=20,angle=0;
+      const interval=setInterval(()=>{
+        angle+=step;
+        if(angle>=randomAngle){
+          clearInterval(interval);
+          currentAngle=(currentAngle+randomAngle)%360;
+          ctx.clearRect(0,0,300,300); drawWheel();
+          setTimeout(()=>{
+            let realDiscount=10+Math.floor(Math.random()*6);
+            applyDiscount(realDiscount);
+            document.getElementById("discountMsg").textContent=`🎉 You won ${realDiscount}% discount!`;
+            localStorage.setItem("hasSpun",true);
+            document.getElementById("spinBtn").disabled=true;
+            spinning=false;
+          },500);
+        } else {
+          currentAngle=(currentAngle+step)%360;
+          ctx.clearRect(0,0,300,300); drawWheel();
+        }
+      },20);
+    }
+
+    function applyDiscount(discount){
+      document.querySelectorAll(".price").forEach(el=>{
+        let basePrice=parseInt(el.getAttribute("data-price"));
+        let newPrice=Math.round(basePrice-(basePrice*discount/100));
+        el.textContent=`₹${newPrice} (after ${discount}% off)`;
+      });
+    }
+  </script>
+</body>
+</html>
